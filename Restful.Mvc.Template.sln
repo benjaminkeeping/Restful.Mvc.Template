@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restful.Mvc.Template", "Restful.Mvc.Template\Restful.Mvc.Template.csproj", "{041CEC80-CEAC-4658-B044-9E3AFE3ABFD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Service.Wiretypes", "Example.Service.Wiretypes\Example.Service.Wiretypes.csproj", "{F5275F3C-6670-42AF-B68C-A31BCEEBBF79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Service.Client.Mvc", "Example.Service.Client.Mvc\Example.Service.Client.Mvc.csproj", "{B46B8196-7CC4-44F9-B5EC-D87FCD76F6D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{041CEC80-CEAC-4658-B044-9E3AFE3ABFD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{041CEC80-CEAC-4658-B044-9E3AFE3ABFD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{041CEC80-CEAC-4658-B044-9E3AFE3ABFD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{041CEC80-CEAC-4658-B044-9E3AFE3ABFD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5275F3C-6670-42AF-B68C-A31BCEEBBF79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5275F3C-6670-42AF-B68C-A31BCEEBBF79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5275F3C-6670-42AF-B68C-A31BCEEBBF79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5275F3C-6670-42AF-B68C-A31BCEEBBF79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B46B8196-7CC4-44F9-B5EC-D87FCD76F6D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B46B8196-7CC4-44F9-B5EC-D87FCD76F6D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B46B8196-7CC4-44F9-B5EC-D87FCD76F6D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B46B8196-7CC4-44F9-B5EC-D87FCD76F6D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

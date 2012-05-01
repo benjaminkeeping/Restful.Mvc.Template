@@ -1,0 +1,18 @@
+﻿@using Example.Service.Wiretypes
+@using Mvc.Extensions
+@model CreateSessionDetails
+<div class="page-header">
+    <h2>Sign in to Promap Solutions</h2>
+
+
+    @using (Html.BeginFormWithErrors())
+    {
+        <fieldset>
+            @Html.BuildFormTextInput("Enter your email", "Your email address", "For example, dave@coaches.com", x => x.Email)
+            @Html.BuildFormPasswordInput("Enter your password", "Your password", "Must be 8 characters, contain at least one number and one capital letter, eg 'mApp1ngs'", x => x.Password)
+            @Html.Submit("Sign in")
+        </fieldset>
+    }
+  
+    @Html.ActionLink("Forgot your password ?", "Forgot", "UserPasswords")
+</div>
