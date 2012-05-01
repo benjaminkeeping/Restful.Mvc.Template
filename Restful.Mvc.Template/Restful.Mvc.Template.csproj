@@ -140,9 +140,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ErrorController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\SessionsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="DependancyResolution\ApplicationRegistry.cs" />
     <Compile Include="DependancyResolution\StructuremapDependencyResolver.cs" />
     <Compile Include="Global.asax.cs">
@@ -224,19 +223,22 @@
       <Project>{B46B8196-7CC4-44F9-B5EC-D87FCD76F6D5}</Project>
       <Name>Example.Service.Client.Mvc</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Example.Service.Client\Example.Service.Client.csproj">
+      <Project>{94857485-A860-4F92-A6BF-E9A78DE1374F}</Project>
+      <Name>Example.Service.Client</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Example.Service.Wiretypes\Example.Service.Wiretypes.csproj">
       <Project>{F5275F3C-6670-42AF-B68C-A31BCEEBBF79}</Project>
       <Name>Example.Service.Wiretypes</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Menu\Index.cshtml" />
+    <Content Include="Views\Users\Menu.cshtml" />
     <Content Include="Views\Sessions\SignIn.cshtml" />
     <Content Include="Views\Sessions\Status.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Welcome.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -4,7 +4,6 @@ namespace Example.Service.Wiretypes
     {
         public string UserId { get; set; }
         public string SessionKey { get; set; }
-
         public string UserName { get; set; }
     }
 }

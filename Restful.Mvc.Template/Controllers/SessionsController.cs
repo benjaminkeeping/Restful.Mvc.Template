@@ -21,6 +21,9 @@ namespace Restful.Mvc.Template.Controllers
         [Get("sign-in")]
         public ActionResult SignIn()
         {
+            if (_sessionProvider.IsLoggedIn())
+                return RedirectToAction("Index", "Users", new { id = _sessionProvider.GetLoggedInUserId() });
+ 
             return View(new CreateSessionDetails());
         }
 
@@ -35,7 +38,6 @@ namespace Restful.Mvc.Template.Controllers
                                       View(details).WithModelErrors(ModelState, errors)
                 );
         }
-
 
         [Get("sign-out")]
         public ActionResult Signout()

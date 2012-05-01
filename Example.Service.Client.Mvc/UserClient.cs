@@ -11,42 +11,26 @@ namespace Example.Service.Client.Mvc
 {
     public class UserClient : BaseClient, IUserClient
     {
-        public UserClient(ISessionProvider sessionProvider) : base(sessionProvider)
+        readonly IUserServiceClient _userServiceClient;
+
+        public UserClient(ISessionProvider sessionProvider, IUserServiceClient userServiceClient) : base(sessionProvider)
         {
+            _userServiceClient = userServiceClient;
         }
 
-        public IEnumerable<GroupOf<Link>> GetUserMenu()
+        public ActionResult GetUserMenu(Func<IEnumerable<GroupOf<Link>>, ActionResult> onSuccess, Func<IEnumerable<Error>, ActionResult> onError)
         {
-            return new List<GroupOf<Link>> {new GroupOf<Link> { GroupName = "Example Group 1", Items = new List<Link> {Link.From("Link 1", "")}}};
+            return Try(() => onSuccess.Invoke(_userServiceClient.GetUserMenu()), onError);
         }
 
         public ActionResult SignIn(CreateSessionDetails details, Func<SessionDetails, ActionResult> onSuccess, Func<IEnumerable<Error>, ActionResult> onError)
         {
-            return Try(() =>
-            {
-                var errors = new List<Error>();
-                if (string.IsNullOrWhiteSpace(details.Email))
-                {
-                    errors.Add(new Error { Key = "Email", Value = "The 'Email' field is required" });
-                }
-                if (string.IsNullOrWhiteSpace(details.Password))
-                {
-                    errors.Add(new Error { Key = "Password", Value = "The 'Password' field is required" });
-                }
+            return Try(() => onSuccess.Invoke(_userServiceClient.SignIn(details)), onError);
+        }
 
-                if (errors.Count > 0)
-                {
-                    throw new Http400(errors);
-                }
-
-                return onSuccess.Invoke(new SessionDetails
-                {
-                    UserId = DateTime.Now.Ticks.ToString(),
-                    SessionKey = new Guid().ToString(),
-                    UserName = "Dave Coaches " +DateTime.Now.Ticks,
-                });
-
-            }, onError);
+        public ActionResult GetUserById(long id, Func<UserDetails, ActionResult> onSuccess, Func<IEnumerable<Error>, ActionResult> onError)
+        {
+            return Try(() => onSuccess.Invoke(_userServiceClient.GetUserById(id)), onError);
         }
     }
 }
